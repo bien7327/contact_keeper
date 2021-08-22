@@ -1,6 +1,10 @@
 const express = require('express'); // because we cant use import  it call comon js
+const connectDB = require('./config/db');
 
 const app = express(); // initialise express in app object
+
+// connecte to database
+connectDB();
 
 app.get('/', (req, res) => res.json({ msg : `welcome to the contact keeper api`}));
 
